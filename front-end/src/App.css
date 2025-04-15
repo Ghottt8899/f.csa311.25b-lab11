@@ -1,47 +1,116 @@
-#board {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
-  padding: 10px
-}
-
-.cell {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  height: 25vmin;
-  text-align: center;
-}
-
-#bottombar {
-  height: 5vh;
-}
-
-#instructions {
-  height: 5vh;
-  background-color: white;
-  padding: 0px;
-  margin: 0px;
-  text-align: center;
-  border: 1px solid black;
-}
-
-#bottombar button {
-  width: 50%;
-  /* height: 100%; */
-  margin: 0;
-  padding: 0;
-  position: relative;
-  float: left;
-  font-size: 2vw
-}
+/* Reset and Base */
 
 html,
 body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #f8f9fa, #e3f2fd);
+    color: #333;
+    height: 100%;
 }
 
-.playable { background-color: red;}
+
+/* Board Styles */
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 90vmin;
+    margin: 40px auto 20px;
+    padding: 20px;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Cell Styles */
+
+.cell {
+    height: 25vmin;
+    background-color: #fafafa;
+    border-radius: 12px;
+    font-size: 4vw;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.cell:hover {
+    background-color: #f1f8e9;
+    transform: scale(1.04);
+}
+
+.playable {
+    cursor: pointer;
+    background-color: #e8f5e9;
+}
+
+
+/* Bottom Bar */
+
+#bottombar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 10px auto;
+}
+
+
+/* Button Styles */
+
+#bottombar button {
+    padding: 12px 24px;
+    font-size: 1em;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    background-color: #42a5f5;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(66, 165, 245, 0.3);
+}
+
+#bottombar button:hover {
+    background-color: #1e88e5;
+    box-shadow: 0 6px 16px rgba(30, 136, 229, 0.4);
+}
+
+
+/* Game Info Section */
+
+#game-info {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 1.2em;
+    flex-wrap: wrap;
+}
+
+#game-info p {
+    margin: 0;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 6px;
+    background: #fff3e0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+#game-info p:first-child {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+#game-info p:last-child {
+    background-color: #ffebee;
+    color: #c62828;
+}
